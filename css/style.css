@@ -1,0 +1,35 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #be93c5; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #be93c5, #7bc6cc); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #be93c5, #7bc6cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 70px;
+	CLICK TO COPY
+}
+
+h1 {
+	font-family: 'Dosis', sans-serif;
+	text-align: center;
+	color: #d4d6d8;
+	margin-bottom: 3%;
+}
+.wrapper {
+	display: flex;
+}
+#charts{
+	width: 59vw;
+	height: 70vh;
+	border: 2px solid black;
+	margin: 0;
+}
+.filterDiv {
+	width: 34vw;
+	height: 70vh;
+	margin: 0;
+	margin-left: 3%;
+	border: 2px solid black;
+}

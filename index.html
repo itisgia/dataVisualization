@@ -3,109 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Data visualization from Survey</title>
-    <style media="screen">
-       #chartContainer {
-         width: 600px;
-         height: 300px;
-         margin: 0 auto;
-         background-color: grey;
-
-       }
-       .wrapper {
-         margin: 0 auto;
-       }
-
-       #second {
-         width: 800px;
-         height: 300px;
-         background-color: pink;
-         margin: 0 auto;
-       }
-       h1{
-         text-align: center;
-       }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <h1>Survey data visualization</h1>
     <div class="wrapper">
-      <div id="chartContainer"></div>
-      <div id="second"></div>
+        <div id="charts">
+               <div class="split-horizontal">
+                   <div class="split-vertical left-top">
+                       <div class="visualization">
+                       </div>
+                   </div>
+                   <div class="split-vertical left-botton">
+                       <div class="visualization">
+
+                       </div>
+                       <div class="filter"></div>
+                   </div>
+               </div>
+               <div class="split-horizontal">
+                   <div class="split-vertical right-top">
+                       <div class="visualization">
+
+                       </div>
+                   </div>
+                   <div class="split-vertical">
+                       <div class="visualization right-bottom">
+                       </div>
+                   </div>
+               </div>
+               <div id="filters" class="split-horizontal">
+
+               </div>
+           </div>
+           <div class="filterDiv">
+
+           </div>
     </div>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    const studentDate = [
-
-        {
-            gender: "Female",
-            count: 6
-        },
-        {
-          gender: "Male",
-          count: 6
-        }
-
-    ] // whenever using data, Array
-
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    // this function draw a chart using google API
-    function drawChart() {
-
-        const data = new google.visualization.DataTable(); // creating border of blank table
-        // creating coloutms
-        data.addColumn("string", "Gender");
-        data.addColumn("number", "Count");
-
-        for (var i = 0; i < studentDate.length; i++) {
-          data.addRow([
-            studentDate[i].gender, studentDate[i].count]);
-        }
-
-        const options = {
-          title : "Gender",
-          colors:['#967d75','#7c6e9e']
-        }
-
-        const chart = new google.visualization.PieChart(document.getElementById('chartContainer'));
-        chart.draw(data, options)
-    }
-
-    function animals() {
-      const data = google.visualization.arrayToDataTable([
-           ["Animals" , "Counts"],
-           ["Monkey" , 1],
-           ["Meercat" , 2],
-           ["Dog", 2],
-           ["Fennec Fox", 1],
-           ["Cat" , 1],
-           ["Pidgeon", 1],
-           ["Rabbit", 1],
-           ["Horse" , 1],
-           ["Sun bear", 1],
-           ["Lion", 1]
-     ]);
-     var options = {
-      title: 'Favourite Animals',
-      chartArea: {width: '50%'},
-      hAxis: {
-        title: 'Number',
-        minValue: 0
-      },
-      vAxis: {
-        title: 'Animals'
-      },
-      colors: ["#98a085"]
-    };
-
-    var chart = new google.visualization.BarChart(document.getElementById('second'));
-    chart.draw(data, options);
-
-    }
-
-  google.charts.load('current', {packages: ['corechart', 'bar']});
-  google.charts.setOnLoadCallback(animals);
-    </script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
