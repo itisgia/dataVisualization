@@ -30,7 +30,8 @@ function drawCharts() {
 			// 	]);
 			// } //for loop ENDS
 		drawPie(surveyData);
-		drawScatter(surveyData)
+		drawScatter(surveyData);
+		drawBar(surveyData)
 	    },
 	    error : function functionName(error) {
 	      console.log("ERROR");
@@ -61,6 +62,8 @@ function drawPie(data){
 
 	var options = {
 		title: "Gender Rate",
+		width: 500,
+		height: 300,
 		backgroundColor: {
 			fill: 'transparent'
 		},
@@ -78,8 +81,8 @@ function drawPie(data){
         },
         legend: {
         	textStyle: {
-        		color: 'black',
-        		fontName: 'Bungee Hairline',
+        		color: '#d4d6d8',
+        		fontName: 'Dosis',
         		fontSize: 15
         	}
         }
@@ -90,29 +93,140 @@ function drawPie(data){
 }
 
 function drawScatter(data) {
+
 	var dataHeight = new google.visualization.DataTable();
+
 	dataHeight.addColumn('number', 'Age');
 	dataHeight.addColumn('number', 'Height');
 
-	var age = 0, height = 0;
-
 	for (var i = 0; i < data.length; i++) {
-		if(data[i].age){
-			age++
-		} else if (data[i].height){
-			height++;
-		}
+		dataHeight.addRow([
+				data[i].age,data[i].height,
+			]);
 	}
 
 	var options = {
-		title: 'Age vs. Weight comparison',
-		hAxis: {title: 'Age', minValue: 0, maxValue: 32},
-		vAxis: {title: 'height', minValue: 0, maxValue: 193},
-		legend: 'none'
+		title: 'Age and Height',
+		titleTextStyle: {
+			   color: '#d4d6d8',
+			   fontName: 'Dosis',
+			   fontSize: 20
+		},
+		backgroundColor: {
+			fill: 'transparent'
+		},
+		width: 490,
+		height: 300,
+		colors: ['#4e6487'],
+		hAxis: {
+			title: 'Age',
+			minValue: 20,
+			maxValue: 32,
+			titleTextStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 3
+			}
+		},
+		vAxis: {
+			title: 'height',
+			minValue: 150,
+			maxValue: 193,
+			titleTextStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 3
+			}
+		},
+		chartArea: {
+			backgroundColor: {
+					stroke: "#d4d6d8"
+			}
+		},
+		legend: {
+			textStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 15
+			}
+		}
 	};
 
 	var scatter = new google.visualization.ScatterChart(document.getElementById('scatterChart'));
+	scatter.draw(dataHeight, options);
 
-	scatter.draw(data, options);
+}
 
+function drawBar(data) {
+	var dataSNS = new google.visualization.DataTable();
+	dataSNS.addColumn('string', 'SNS',);
+	dataSNS.addColumn('number', 'amount');
+
+	var tweet = 0, fb = 0, sc = 0, ig = 0, reddit = 0;
+
+	for (var i = 0; i < data.length; i++) {
+		if(data[i].socialmedia == "Twitter"){
+	  		tweet++;
+  		} else if (data[i].socialmedia == "Facebook"){
+	  		fb++;
+  		} else if (data[i].socialmedia == "Snapchat"){
+	  		sc++;
+  		} else if (data[i].socialmedia == "Instagram"){
+	  		ig++;
+  		} else if (data[i].socialmedia == "Reddit"){
+	  		reddit++;
+  		}
+	}
+
+	dataSNS.addRow(["Twitter", tweet]);
+	dataSNS.addRow(["Facebook", fb]);
+	dataSNS.addRow(["Snapchat", sc]);
+	dataSNS.addRow(["Instagram", ig]);
+	dataSNS.addRow(["Reddit", reddit]);
+
+	var options = {
+		title: 'Social media usage',
+		colors: ['#b27991'],
+		backgroundColor: {
+			fill: 'transparent'
+		},
+		width: 490,
+		height: 300,
+		titleTextStyle: {
+               color: '#d4d6d8',
+               fontName: 'Dosis',
+               fontSize: 20
+        },
+        chartArea: {
+        	backgroundColor: {
+        		stroke: 'd4d6d8'
+        	}
+        },
+        legend: 'none',
+	    hAxis: {
+	    	title: 'Amount',
+			textStyle: {
+				color:'#d4d6d8',
+			},
+			titleTextStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 15
+    		}
+	    },
+	    vAxis: {
+	     	title: 'SNS',
+        	textStyle: {
+        		color: 'white'
+        	},
+        	titleTextStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 15
+    		}
+      	}
+	};
+
+	var Bar = new google.visualization.BarChart(document.getElementById('barChart'));
+	Bar.draw(dataSNS, options);
 }

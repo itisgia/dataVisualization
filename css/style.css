@@ -21,17 +21,17 @@ h1 {
 	display: flex;
 }
 #charts{
-	width: 59vw;
+	width: 70vw;
 	height: 70vh;
-	border: 2px solid black;
+	border: 1px solid #d4d6d8;
 	margin: 0;
 }
 .filterDiv {
-	width: 34vw;
+	width: 30vw;
 	height: 70vh;
 	margin: 0;
 	margin-left: 3%;
-	border: 2px solid black;
+	border: 1px solid #d4d6d8;
 }
 
 
@@ -39,15 +39,15 @@ h1 {
 	float: left;
 	height: 100%;
 	width: 50%;
+
 }
 
 .split-vertical {
-	border: 1px solid black;
+	border: 1px solid #d4d6d8;
 	height: 50%;
 	padding: 5px;
 	width: 100%;
 }
 
 .left-top {
-	padding: 2%;
 }
