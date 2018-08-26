@@ -30,6 +30,7 @@ function drawCharts() {
 			// 	]);
 			// } //for loop ENDS
 		drawPie(surveyData);
+		drawScatter(surveyData)
 	    },
 	    error : function functionName(error) {
 	      console.log("ERROR");
@@ -64,12 +65,12 @@ function drawPie(data){
 			fill: 'transparent'
 		},
 		titleTextStyle: {
-               color: 'black',
+               color: '#d4d6d8',
                fontName: 'Dosis',
                fontSize: 20
         },
         pieSliceTextStyle: {
-            color: 'white'
+            color: '#d4d6d8'
         },
         slices: {
         	0: {color: '#8c7b8b'},
@@ -86,4 +87,32 @@ function drawPie(data){
 
 	var pie = new google.visualization.PieChart(document.getElementById('pieChart'));
 	pie.draw(dataGender, options);
+}
+
+function drawScatter(data) {
+	var dataHeight = new google.visualization.DataTable();
+	dataHeight.addColumn('number', 'Age');
+	dataHeight.addColumn('number', 'Height');
+
+	var age = 0, height = 0;
+
+	for (var i = 0; i < data.length; i++) {
+		if(data[i].age){
+			age++
+		} else if (data[i].height){
+			height++;
+		}
+	}
+
+	var options = {
+		title: 'Age vs. Weight comparison',
+		hAxis: {title: 'Age', minValue: 0, maxValue: 32},
+		vAxis: {title: 'height', minValue: 0, maxValue: 193},
+		legend: 'none'
+	};
+
+	var scatter = new google.visualization.ScatterChart(document.getElementById('scatterChart'));
+
+	scatter.draw(data, options);
+
 }
