@@ -7,7 +7,7 @@ body {
 	background: #be93c5; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #be93c5, #7bc6cc); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #be93c5, #7bc6cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	padding: 70px;
+	padding: 20px;
 	CLICK TO COPY
 }
 
@@ -32,4 +32,24 @@ h1 {
 	margin: 0;
 	margin-left: 3%;
 	border: 2px solid black;
+}
+
+* {
+	box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.split-horizontal {
+	float: left;
+	height: 100%;
+	width: 50%;
+}
+
+.split-vertical {
+	border: 1px solid black;
+	height: 50%;
+	padding: 5px;
+	width: 100%;
 }
