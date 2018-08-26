@@ -1,0 +1,19 @@
+{
+  "name": "datavisualization",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itisgia/dataVisualization.git"
+  },
+  "author": "Jiah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itisgia/dataVisualization/issues"
+  },
+  "homepage": "https://github.com/itisgia/dataVisualization#readme"
+}

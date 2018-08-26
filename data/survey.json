@@ -1,0 +1,145 @@
+[
+	{
+		"id":1,
+		"first_name":"King",
+		"last_name":"Ommundsen",
+		"gender":"Male",
+		"age":31,
+		"height": 182,
+		"socialmedia":"Twitter",
+		"hours" : 3,
+		"avatar":"https://robohash.org/nonsapienteea.png?size=50x50&set=set1"
+	},
+	{
+		"id":2,
+		"first_name":"Eloisa",
+		"last_name":"Giacomini",
+		"gender":"Female",
+		"age":33,
+		"height": 162,
+		"socialmedia":"Facebook",
+		"hours" : 6,
+		"avatar":"https://robohash.org/maioresdignissimoscorporis.jpg?size=50x50&set=set1"
+	},
+	{
+		"id":3,
+		"first_name":"Betsey",
+		"last_name":"Shorter",
+		"gender":"Female",
+		"age":29,
+		"height": 171,
+		"socialmedia":"Twitter",
+		"hours" : 2,
+		"avatar":"https://robohash.org/voluptatesquaequaerat.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":4,
+		"first_name":"Camilla",
+		"last_name":"Filip",
+		"gender":"Female",
+		"age":34,
+		"height": 159,
+		"socialmedia":"Reddit",
+		"hours" : 5,
+		"avatar":"https://robohash.org/uttemporibusreprehenderit.jpg?size=50x50&set=set1"
+	},
+	{
+		"id":5,
+		"first_name":"Velvet",
+		"last_name":"Runcieman",
+		"gender":"Female",
+		"age":28,
+		"height": 168,
+		"socialmedia":"Instagram",
+		"hours" : 4,
+		"avatar":"https://robohash.org/doloremquosiure.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":6,
+		"first_name":"Twila",
+		"last_name":"Morrowe",
+		"gender":"Female",
+		"age":25,
+		"height": 155,
+		"socialmedia":"Snapchat",
+		"hours" : 8,
+		"avatar":"https://robohash.org/temporacommodimolestiae.png?size=50x50&set=set1"
+	},
+	{
+		"id":7,
+		"first_name":"Lila",
+		"last_name":"Callington",
+		"gender":"Female",
+		"age":29,
+		"height": 162,
+		"socialmedia":"Facebook",
+		"hours" : 6,
+		"avatar":"https://robohash.org/suntiustoeos.jpg?size=50x50&set=set1"
+	},
+	{
+		"id":8,
+		"first_name":"Reynard",
+		"last_name":"Dineges",
+		"gender":"Male",
+		"age":21,
+		"height": 175,
+		"socialmedia":"Instagram",
+		"hours" : 10,
+		"avatar":"https://robohash.org/quidemipsamfacere.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":9,
+		"first_name":"Bobinette",
+		"last_name":"Stolberger",
+		"gender":"Female",
+		"age":33,
+		"height": 174,
+		"socialmedia":"Twitter",
+		"hours" : 1,
+		"avatar":"https://robohash.org/saepenullaet.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":10,
+		"first_name":"Remington",
+		"last_name":"Childs",
+		"gender":"Male",
+		"age":31,
+		"height": 172,
+		"socialmedia":"Facebook",
+		"hours" : 2,
+		"avatar":"https://robohash.org/quiaetest.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":11,
+		"first_name":"Giacopo",
+		"last_name":"Sellan",
+		"gender":"Male",
+		"age":21,
+		"height": 190,
+		"socialmedia":"Snapchat",
+		"hours" : 9,
+		"avatar":"https://robohash.org/sitlaborumest.png?size=50x50&set=set1"
+	},
+	{
+		"id":12,
+		"first_name":"Emma",
+		"last_name":"Treadwell",
+		"gender":"Female",
+		"age":21,
+		"height": 152,
+		"socialmedia":"Instagram",
+		"hours" : 3,
+		"avatar":"https://robohash.org/quamquaeratlabore.bmp?size=50x50&set=set1"
+	},
+	{
+		"id":13,
+		"first_name":"Lolita",
+		"last_name":"Blakeway",
+		"gender":"Female",
+		"age":21,
+		"height": 167,
+		"socialmedia":"Instagram",
+		"hours" : 7,
+		"avatar":"https://robohash.org/quirerumasperiores.jpg?size=50x50&set=set1"
+		}
+]
