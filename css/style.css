@@ -20,7 +20,7 @@ h1 {
 .wrapper {
 	display: flex;
 }
-#charts{
+#dashboards{
 	width: 70vw;
 	height: 70vh;
 	/* border: 1px solid #d4d6d8; */
@@ -39,7 +39,7 @@ h1 {
 	float: left;
 	height: 100%;
 	width: 50%;
-	
+
 
 }
 

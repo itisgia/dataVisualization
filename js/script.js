@@ -1,37 +1,109 @@
-google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.load('current', { 'packages': ['corechart', 'controls'] });
 //Run the function drawDashboard
-google.charts.setOnLoadCallback(drawCharts);
+google.charts.setOnLoadCallback( drawDashboard);
 
-function drawCharts() {
+function  drawDashboard() {
 	$.ajax({
 	    url: "data/survey.json",
 	    dataType: "json",
 	    type: "GET",
 	    success: function functionName(surveyData) {
-			// var data = new google.visualization.DataTable();
-			// data.addColumn('number', 'People');
-			// data.addColumn('string', 'Name');
-			// data.addColumn('string', 'Gender');
-			// data.addColumn('number', 'Age');
-			// data.addColumn('string', 'Hours');
-			// data.addColumn('number', 'Height');
-			//
-			// for (var i = 0; i < surveyData.length; i++) {
-			// 	data.addRow([
-			// 		surveyData[i].id,
-			// 		surveyData[i].first_name + " " + surveyData[i].last_name,
-			// 		surveyData[i].gender,
-			// 		surveyData[i].age,
-			// 		surveyData[i].height,
-			// 		surveyData[i].socialmedia,
-			// 		surveyData[i].hours,
-			// 		surveyData[i].time
-			// 	]);
-			// } //for loop ENDS
+			var data = new google.visualization.DataTable();
+				data.addColumn('number', 'People')
+				data.addColumn('string', 'Name');
+				data.addColumn('string', 'Gender');
+				data.addColumn('number', 'Age');
+				data.addColumn('number', 'Height');
+				data.addColumn('string', 'SNS');
+				data.addColumn('string', 'Device');
+
+				for (var i = 0; i < surveyData.length; i++) {
+					data.addRow([
+						surveyData[i].id,
+						surveyData[i].first_name + " " + surveyData[i].last_name,
+						surveyData[i].gender,
+						surveyData[i].age,
+						surveyData[i].height,
+						surveyData[i].socialmedia,
+						surveyData[i].device,
+					]);
+				};
+				var dashboard = new google.visualization.Dashboard(document.getElementById('dashboards'));
+				var scatterChart = new google.visualization.ChartWrapper({
+					chartType: 'ScatterChart',
+					containerId: 'scatterChartDiv',
+					options : {
+						title: 'Age and Height',
+						titleTextStyle: {
+							   color: '#d4d6d8',
+							   fontName: 'Dosis',
+							   fontSize: 20
+						},
+						backgroundColor: {
+							fill: 'transparent'
+						},
+						width: 490,
+						height: 300,
+						colors: ['#8d9ca0'],
+						hAxis: {
+							title: 'Age',
+							ticks: [20,25,30,35,40],
+							titleTextStyle: {
+								color: '#d4d6d8',
+								fontName: 'Dosis',
+								fontSize: 13
+							}
+						},
+						vAxis: {
+							title: 'height',
+							ticks: [150, 160, 170, 180, 190],
+							// minValue: 150,
+							// maxValue: 193,
+							titleTextStyle: {
+								color: '#d4d6d8',
+								fontName: 'Dosis',
+								fontSize: 3
+							}
+						},
+						chartArea: {
+							backgroundColor: {
+									stroke: "#d4d6d8"
+							}
+						},
+						legend: {
+							textStyle: {
+								color: '#d4d6d8',
+								fontName: 'Dosis',
+								fontSize: 15
+							}
+						}
+					},
+					view: {
+						columns: [3,4]
+					},
+				});
+
+
+		//slider
+
+
+			var ageSlider = new google.visualization.ControlWrapper({
+				controlType: 'NumberRangeFilter',
+				containerId: 'ageSlider',
+				options:{
+					filterColumnLabel: 'Age',
+					ui: {
+						labelStacking:'vertical'
+					}
+				}
+			});
+
+		dashboard.bind([ageSlider], [scatterChart]);
+		dashboard.draw(data);
 		drawPie(surveyData);
-		drawScatter(surveyData);
 		drawBar(surveyData);
-		drawDonut(surveyData)
+		drawDonut(surveyData);
+
 	    },
 	    error : function functionName(error) {
 	      console.log("ERROR");
@@ -92,70 +164,7 @@ function drawPie(data){
 	pie.draw(dataGender, options);
 }
 
-function drawScatter(data) {
 
-	var dataHeight = new google.visualization.DataTable();
-
-	dataHeight.addColumn('number', 'Age');
-	dataHeight.addColumn('number', 'Height');
-
-	for (var i = 0; i < data.length; i++) {
-		dataHeight.addRow([
-				data[i].age,data[i].height,
-			]);
-	}
-
-	var options = {
-		title: 'Age and Height',
-		titleTextStyle: {
-			   color: '#d4d6d8',
-			   fontName: 'Dosis',
-			   fontSize: 20
-		},
-		backgroundColor: {
-			fill: 'transparent'
-		},
-		width: 490,
-		height: 300,
-		colors: ['#8d9ca0'],
-		hAxis: {
-			title: 'Age',
-			minValue: 20,
-			maxValue: 32,
-			titleTextStyle: {
-				color: '#d4d6d8',
-				fontName: 'Dosis',
-				fontSize: 3
-			}
-		},
-		vAxis: {
-			title: 'height',
-			minValue: 150,
-			maxValue: 193,
-			titleTextStyle: {
-				color: '#d4d6d8',
-				fontName: 'Dosis',
-				fontSize: 3
-			}
-		},
-		chartArea: {
-			backgroundColor: {
-					stroke: "#d4d6d8"
-			}
-		},
-		legend: {
-			textStyle: {
-				color: '#d4d6d8',
-				fontName: 'Dosis',
-				fontSize: 15
-			}
-		}
-	};
-
-	var scatter = new google.visualization.ScatterChart(document.getElementById('scatterChart'));
-	scatter.draw(dataHeight, options);
-
-}
 
 function drawBar(data) {
 	var dataSNS = new google.visualization.DataTable();
