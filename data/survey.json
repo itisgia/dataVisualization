@@ -7,7 +7,7 @@
 		"age":31,
 		"height": 182,
 		"socialmedia":"Twitter",
-		"hours" : 3,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/nonsapienteea.png?size=50x50&set=set1"
 	},
 	{
@@ -18,7 +18,7 @@
 		"age":33,
 		"height": 162,
 		"socialmedia":"Facebook",
-		"hours" : 6,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/maioresdignissimoscorporis.jpg?size=50x50&set=set1"
 	},
 	{
@@ -29,7 +29,7 @@
 		"age":29,
 		"height": 171,
 		"socialmedia":"Twitter",
-		"hours" : 2,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/voluptatesquaequaerat.bmp?size=50x50&set=set1"
 	},
 	{
@@ -40,7 +40,7 @@
 		"age":34,
 		"height": 159,
 		"socialmedia":"Reddit",
-		"hours" : 5,
+		"device" : "Desktop",
 		"avatar":"https://robohash.org/uttemporibusreprehenderit.jpg?size=50x50&set=set1"
 	},
 	{
@@ -51,7 +51,7 @@
 		"age":28,
 		"height": 168,
 		"socialmedia":"Instagram",
-		"hours" : 4,
+		"device" : "Tablet",
 		"avatar":"https://robohash.org/doloremquosiure.bmp?size=50x50&set=set1"
 	},
 	{
@@ -62,7 +62,7 @@
 		"age":25,
 		"height": 155,
 		"socialmedia":"Snapchat",
-		"hours" : 8,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/temporacommodimolestiae.png?size=50x50&set=set1"
 	},
 	{
@@ -73,7 +73,7 @@
 		"age":29,
 		"height": 162,
 		"socialmedia":"Facebook",
-		"hours" : 6,
+		"device" : "Desktop",
 		"avatar":"https://robohash.org/suntiustoeos.jpg?size=50x50&set=set1"
 	},
 	{
@@ -84,7 +84,7 @@
 		"age":20,
 		"height": 175,
 		"socialmedia":"Instagram",
-		"hours" : 10,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/quidemipsamfacere.bmp?size=50x50&set=set1"
 	},
 	{
@@ -95,7 +95,7 @@
 		"age":33,
 		"height": 174,
 		"socialmedia":"Twitter",
-		"hours" : 1,
+		"device" : "Desktop",
 		"avatar":"https://robohash.org/saepenullaet.bmp?size=50x50&set=set1"
 	},
 	{
@@ -106,7 +106,7 @@
 		"age":31,
 		"height": 172,
 		"socialmedia":"Facebook",
-		"hours" : 2,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/quiaetest.bmp?size=50x50&set=set1"
 	},
 	{
@@ -117,7 +117,7 @@
 		"age":23,
 		"height": 190,
 		"socialmedia":"Snapchat",
-		"hours" : 9,
+		"device" : "Tablet",
 		"avatar":"https://robohash.org/sitlaborumest.png?size=50x50&set=set1"
 	},
 	{
@@ -128,7 +128,7 @@
 		"age":21,
 		"height": 152,
 		"socialmedia":"Instagram",
-		"hours" : 3,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/quamquaeratlabore.bmp?size=50x50&set=set1"
 	},
 	{
@@ -139,7 +139,7 @@
 		"age":21,
 		"height": 167,
 		"socialmedia":"Instagram",
-		"hours" : 7,
+		"device" : "Phone",
 		"avatar":"https://robohash.org/quirerumasperiores.jpg?size=50x50&set=set1"
 		}
 ]

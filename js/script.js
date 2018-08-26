@@ -15,7 +15,6 @@ function drawCharts() {
 			// data.addColumn('number', 'Age');
 			// data.addColumn('string', 'Hours');
 			// data.addColumn('number', 'Height');
-			// data.addColumn('number', 'Multilingual');
 			//
 			// for (var i = 0; i < surveyData.length; i++) {
 			// 	data.addRow([
@@ -31,7 +30,8 @@ function drawCharts() {
 			// } //for loop ENDS
 		drawPie(surveyData);
 		drawScatter(surveyData);
-		drawBar(surveyData)
+		drawBar(surveyData);
+		drawDonut(surveyData)
 	    },
 	    error : function functionName(error) {
 	      console.log("ERROR");
@@ -117,7 +117,7 @@ function drawScatter(data) {
 		},
 		width: 490,
 		height: 300,
-		colors: ['#4e6487'],
+		colors: ['#8d9ca0'],
 		hAxis: {
 			title: 'Age',
 			minValue: 20,
@@ -185,8 +185,8 @@ function drawBar(data) {
 	dataSNS.addRow(["Reddit", reddit]);
 
 	var options = {
-		title: 'Social media usage',
-		colors: ['#b27991'],
+		title: 'Types of Social media',
+		colors: ['#b279a5'],
 		backgroundColor: {
 			fill: 'transparent'
 		},
@@ -229,4 +229,56 @@ function drawBar(data) {
 
 	var Bar = new google.visualization.BarChart(document.getElementById('barChart'));
 	Bar.draw(dataSNS, options);
+}
+
+function drawDonut(data) {
+	var dataDevice = new google.visualization.DataTable();
+	dataDevice.addColumn('string', 'SNS',);
+	dataDevice.addColumn('number', 'amount');
+
+	var phone = 0, desktop = 0, tablet = 0;
+
+	for (var i = 0; i < data.length; i++) {
+		if(data[i].device == "Phone"){
+			phone++;
+		} else if (data[i].device == "Desktop"){
+			desktop++;
+		} else if (data[i].device == "Tablet"){
+			tablet++;
+		}
+	}
+
+	dataDevice.addRow(["Phone", phone]);
+	dataDevice.addRow(["Desktop", desktop]);
+	dataDevice.addRow(["Tablet", tablet]);
+
+	var options = {
+		title: "Preferred Device",
+		width: 500,
+		height: 300,
+		backgroundColor: {
+			fill: 'transparent'
+		},
+		titleTextStyle: {
+			color: '#d4d6d8',
+			fontName: 'Dosis',
+			fontSize: 20
+		},
+		pieHole: 0.5,
+		slices: {
+			0: {color: '#60afc4'},
+			1: {color: '#618ba3'},
+			2: {color: '#8f9fa8'},
+		},
+		legend: {
+			textStyle: {
+				color: '#d4d6d8',
+				fontName: 'Dosis',
+				fontSize: 14
+			}
+		}
+	}
+
+	var Donught = new google.visualization.PieChart(document.getElementById('doChart'));
+	Donught.draw(dataDevice, options);
 }
