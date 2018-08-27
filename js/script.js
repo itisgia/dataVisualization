@@ -104,6 +104,34 @@ function  drawDashboard() {
 		drawBar(surveyData);
 		drawDonut(surveyData);
 
+		//binding other functions
+	google.visualization.events.addListener(ageSlider, 'statechange', function(){
+
+		var range = ageSlider.getState();
+
+		var view = new google.visualization.DataView(data);
+
+		view.setRows(data.getFilteredRows([
+			{
+				column: 3,
+				minValue: range.lowValue,
+				maxValue: range.highValue
+			}
+		]));
+
+		var filteredRows = view.ol;
+		var newData = [];
+
+		for (i = 0; i < filteredRows.length; i++){
+			newData.push(surveyData[filteredRows[i]]);
+		};
+
+		drawBar(newData);
+		drawPie(newData);
+		drawDonut(newData);
+	});
+
+
 	    },
 	    error : function functionName(error) {
 	      console.log("ERROR");
