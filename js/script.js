@@ -83,10 +83,22 @@ function  drawDashboard() {
 					},
 				});
 
+			google.visualization.events.addListener(scatterChart, 'select', getDetails);
+			function getDetails() {
+
+				var getRow = scatterChart.getChart().getSelection()[0].row;
+							scatterChart.getChart().setSelection();
+							var infoData =surveyData[getRow];
+
+				if (infoData) {
+					document.getElementById('putImg').src = infoData.avatar;
+					document.getElementById('name').innerText = infoData.first_name + ' ' + infoData.last_name;
+					document.getElementById('age').innerText = infoData.age;
+					document.getElementById('gender').innerText = infoData.gender;
+				}
+			}
 
 		//slider
-
-
 			var ageSlider = new google.visualization.ControlWrapper({
 				controlType: 'NumberRangeFilter',
 				containerId: 'ageSlider',
